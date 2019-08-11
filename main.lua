@@ -27,7 +27,7 @@ local timer = 0
 local currentTurn = testPlayer2
 local diceFont = love.graphics.newFont(40)
 local currentRoll = 0
-local currentRoleMovement = 0
+local currentRollMovement = 0
 local isTwo = nil
 
 function love.load()
@@ -77,15 +77,14 @@ function love.update(dt)
                 testPlayer2.isTurn = not testPlayer2.isTurn
                 currentTurn = testPlayer
                 currentTurn.turnNum = currentTurn.turnNum+1 
-                currentTurn.currentRoleMovement = 0
+                currentTurn.currentRollMovement = 0
             else 
             
             testPlayer2.isTurn = not testPlayer2.isTurn
             testPlayer.isTurn = not testPlayer.isTurn
             currentTurn = testPlayer2
             currentTurn.turnNum = currentTurn.turnNum+1 
-            --  YOU SPELLED 'ROLL' WRONG ASSHOLE, THIS LED TO MANY MISTAKES
-            currentTurn.currentRoleMovement = 0
+            currentTurn.currentRollMovement = 0
             end
         end
         
@@ -103,7 +102,7 @@ function love.draw()
     --love.graphics.rectangle('line', (WINDOW_WIDTH/2)-64, (WINDOW_HEIGHT/2)-45 ,128, 90)
     love.graphics.setFont(diceFont)
     love.graphics.print(math.floor(timer), (WINDOW_WIDTH/2-8), (WINDOW_HEIGHT/2)-20)
-    love.graphics.print(currentTurn.name .. ' ROLLED: ' .. currentTurn.currentRoleMovement, (WINDOW_WIDTH/2-8-480), (WINDOW_HEIGHT/2)-8+200)
+    love.graphics.print(currentTurn.name .. ' ROLLED: ' .. currentTurn.currentRollMovement, (WINDOW_WIDTH/2-8-480), (WINDOW_HEIGHT/2)-8+200)
     love.graphics.print('CURRENT TURN: ' .. currentTurn.name, (WINDOW_WIDTH/2+100), (WINDOW_HEIGHT/2)-8+200)
     love.graphics.print('PRESS SPACE TO ROLL', (WINDOW_WIDTH/2-8-200), (WINDOW_HEIGHT/2)-250)
 end

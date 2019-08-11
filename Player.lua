@@ -18,7 +18,7 @@ function Player:init(x, y, color, name)
     self.image = nil
     self.hasRolled = false
     self.currentRoll = 0
-    self.currentRoleMovement = 0
+    self.currentRollMovement = 0
     self.isMoving = false
     self.evenRoll = false
     self.turned = false
@@ -30,7 +30,7 @@ function Player:update(dt, currentRoll, isTwo)
     -- can add spaces travelled logic here and ensure they stay lined up with board
     if self.isTurn then
         
-        if self.currentRoleMovement == currentRoll then
+        if self.currentRollMovement == currentRoll then
             
             self.isMoving = false
             -- stop moving when roll movement equals the current player's roll
@@ -53,10 +53,10 @@ function Player:update(dt, currentRoll, isTwo)
                     end
                     -- checks for spaces moved
                     if self.x % 128 == 0  then
-                        self.currentRoleMovement = self.currentRoleMovement + 1
+                        self.currentRollMovement = self.currentRollMovement + 1
                         self.spacesTravelled = self.spacesTravelled - 1
                         -- should prevent moving slightly around corners
-                        if self.currentRoleMovement == currentRoll then
+                        if self.currentRollMovement == currentRoll then
                             return
                         end
                     end
@@ -73,10 +73,10 @@ function Player:update(dt, currentRoll, isTwo)
                     end
                     -- checks for spaces moved
                     if self.y % 90 == 0 then
-                        self.currentRoleMovement = self.currentRoleMovement + 1
+                        self.currentRollMovement = self.currentRollMovement + 1
                         self.spacesTravelled = self.spacesTravelled - 1
                         
-                        if self.currentRoleMovement == currentRoll then
+                        if self.currentRollMovement == currentRoll then
                             return
                         end
                     end
@@ -92,10 +92,10 @@ function Player:update(dt, currentRoll, isTwo)
                     end
                     -- checks for spaces moved
                     if self.x % 128 == 0 then
-                        self.currentRoleMovement = self.currentRoleMovement + 1
+                        self.currentRollMovement = self.currentRollMovement + 1
                         self.spacesTravelled = self.spacesTravelled -1 
                         
-                        if self.currentRoleMovement == currentRoll then
+                        if self.currentRollMovement == currentRoll then
                             return
                         end
                     end
@@ -113,10 +113,10 @@ function Player:update(dt, currentRoll, isTwo)
                     end
                     -- checks for spaces moved
                     if self.y % 90 == 0 then
-                        self.currentRoleMovement = self.currentRoleMovement + 1
+                        self.currentRollMovement = self.currentRollMovement + 1
                         self.spacesTravelled = self.spacesTravelled - 1
                         
-                        if self.currentRoleMovement == currentRoll then
+                        if self.currentRollMovement == currentRoll then
                             return
                         end
                     end
@@ -134,10 +134,10 @@ function Player:update(dt, currentRoll, isTwo)
                 end
                 -- checks for spaces moved
                 if self.x % 128 == 0 then
-                    self.currentRoleMovement = self.currentRoleMovement + 1
+                    self.currentRollMovement = self.currentRollMovement + 1
                     self.spacesTravelled = self.spacesTravelled + 1
                     -- might prevent moving slightly around corners
-                    if self.currentRoleMovement == currentRoll then
+                    if self.currentRollMovement == currentRoll then
                         return
                     end
                 end
@@ -153,10 +153,10 @@ function Player:update(dt, currentRoll, isTwo)
                 end
                 -- checks for spaces moved
                 if self.y % 90 == 0 then
-                    self.currentRoleMovement = self.currentRoleMovement + 1
+                    self.currentRollMovement = self.currentRollMovement + 1
                     self.spacesTravelled = self.spacesTravelled + 1
                 
-                    if self.currentRoleMovement == currentRoll then
+                    if self.currentRollMovement == currentRoll then
                         return
                     end
                 end
@@ -172,10 +172,10 @@ function Player:update(dt, currentRoll, isTwo)
                 end
                 -- checks for spaces moved
                 if self.x % 128 == 0 then
-                    self.currentRoleMovement = self.currentRoleMovement + 1
+                    self.currentRollMovement = self.currentRollMovement + 1
                     self.spacesTravelled = self.spacesTravelled + 1
                     
-                    if self.currentRoleMovement == currentRoll then
+                    if self.currentRollMovement == currentRoll then
                         return
                     end
                 end
@@ -193,10 +193,10 @@ function Player:update(dt, currentRoll, isTwo)
                 end
                 -- checks for spaces moved
                 if self.y % 90 == 0 then
-                    self.currentRoleMovement = self.currentRoleMovement + 1
+                    self.currentRollMovement = self.currentRollMovement + 1
                     self.spacesTravelled = self.spacesTravelled + 1
                     
-                    if self.currentRoleMovement == currentRoll then
+                    if self.currentRollMovement == currentRoll then
                         return
                     end
                 end
